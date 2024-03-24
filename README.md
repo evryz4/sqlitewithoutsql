@@ -18,27 +18,28 @@ Or from [Github](https://github.com/evryz4/sqlitewithoutsql/)
 ## Using ##
 ### Connecting a database ###
 ```python
-from sqlitewithoutsql import Database
+from sqlitewithoutsql.database import Database
 
 db = Database('data.db')
 ```
 ### Creating the table ###
 ```python
-from sqlitewithoutsql import Database, Sqltype
+from sqlitewithoutsql.database import Database
+from sqlitewithoutsql.sqltype import Sqltype
 
 db = Database('data.db')
 db.new_table(name='test', col1=Sqltype.INT, col2=Sqltype.STR)
 ```
 ### Inserting the values ###
 ```python
-from sqlitewithoutsql import Database
+from sqlitewithoutsql.database import Database
 
 db = Database('data.db')
 db.insert(table_name='test', 123, 'abc')
 ```
 ### Getting the values ###
 ```python
-from sqlitewithoutsql import Database
+from sqlitewithoutsql.database import Database
 
 db = Database('data.db')
 table = db.get_table(table_name='test')
@@ -46,14 +47,14 @@ print(table)
 ```
 ### Editing the values ###
 ```python
-from sqlitewithoutsql import Database
+from sqlitewithoutsql.database import Database
 
 db = Database('data.db')
 db.edit(table_name='test', id=1, column_name='col1', new_value=456)
 ```
 ### Deleting the values ###
 ```python
-from sqlitewithoutsql import Database
+from sqlitewithoutsql.database import Database
 
 db = Database('data.db')
 db.delete(table_name='test', id=1)
